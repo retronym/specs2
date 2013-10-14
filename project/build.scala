@@ -39,14 +39,15 @@ object build extends Build {
     name := "specs2",
     organization := "org.specs2",
     specs2Version in GlobalScope <<= version,
-    scalaVersion := "2.10.2",
-    addCompilerPlugin("org.scala-lang.plugins" % "macro-paradise_2.10.3-RC1" % "2.0.0-SNAPSHOT")
+    scalaVersion := "2.11.0-M5",
+    //addCompilerPlugin("org.scala-lang.plugins" % "macro-paradise_2.10.3-RC1" % "2.0.0-SNAPSHOT"),
+    conflictWarning ~= { _.copy(failOnConflict = false) }
   )
 
   lazy val compilationSettings: Seq[Settings] = Seq(
     javacOptions ++= Seq("-Xmx3G", "-Xms512m", "-Xss4m"),
     maxErrors := 20,
-    scalacOptions ++= Seq("-Xlint", "-deprecation", "-unchecked", "-feature", "-language:_"),
+    scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature", "-language:_"),
     scalacOptions in Test ++= Seq("-Yrangepos")
   )
 

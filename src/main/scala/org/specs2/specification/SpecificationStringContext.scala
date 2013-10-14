@@ -133,9 +133,9 @@ object S2Macro {
       c.Expr(methodCall(c)("s2",
         c.literal(content).tree,
         c.literal(Yrangepos).tree,
-        toAST[List[_]](c)(texts:_*),
-        toAST[List[_]](c)(variables.map(_.tree):_*),
-        toAST[List[_]](c)(variables.map(stringExpr(c)(_)):_*)))
+        toAST[List[Any]](c)(texts:_*),
+        toAST[List[Any]](c)(variables.map(_.tree):_*),
+        toAST[List[Any]](c)(variables.map(stringExpr(c)(_)):_*)))
 
     c.Expr(atPos(c.prefix.tree.pos)(result.tree))
 

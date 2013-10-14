@@ -10,9 +10,9 @@ object dependencies {
     specs2
   
   // Libraries
-  def scalaz(scalazVersion: String = "7.0.2") = Seq(
-    "org.scalaz"                        %% "scalaz-core"               % scalazVersion,
-    "org.scalaz"                        %% "scalaz-concurrent"         % scalazVersion)
+  def scalaz(scalazVersion: String = "7.1.0-SNAPSHOT") = Seq(
+    "org.scalaz"                        %% "scalaz-core"               % scalazVersion intransitive(),
+    "org.scalaz"                        %% "scalaz-concurrent"         % scalazVersion intransitive())
 
   def scalalibs(scalaVersion: String) = Seq(
       "org.scala-lang"          % "scala-reflect"      % scalaVersion  % "optional",
@@ -20,8 +20,8 @@ object dependencies {
       "org.scala-sbt"           % "test-interface"     % "1.0"         % "optional")
 
   def specs2 = Seq(
-      "org.scalacheck"          %% "scalacheck"        % "1.10.0"      % "optional",
-      "com.chuusai"             % "shapeless_2.10.2"   % "2.0.0-M1"    % "optional",
+      "org.scalacheck"          %% "scalacheck"        % "1.10.1"      % "optional",
+      "com.chuusai"             % "shapeless_2.11.0-SNAPSHOT"   % "2.0.0-SNAPSHOT"    % "optional",
       "org.hamcrest"            % "hamcrest-core"      % "1.3"         % "optional",
       "org.mockito"             % "mockito-all"        % "1.9.0"       % "optional",
       "junit"                   % "junit"              % "4.11"        % "optional",
